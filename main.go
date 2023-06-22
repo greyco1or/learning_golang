@@ -2,6 +2,14 @@ package main
 
 import "fmt"
 
+type persion struct {
+	name string
+	age int
+	favFood []string
+}
+
 func main() {
-	fmt.Println("Hello World!")
+	favFood:= []string{"kimchi", "hamburger"}
+	grey := persion{name: "grey", age: 80, favFood: favFood}
+	fmt.Println(grey)
 }
