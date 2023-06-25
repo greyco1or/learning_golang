@@ -1,15 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
 
-type persion struct {
-	name string
-	age int
-	favFood []string
-}
+	"github.com/greyco1or/learngo/accounts"
+)
 
 func main() {
-	favFood:= []string{"kimchi", "hamburger"}
-	grey := persion{name: "grey", age: 80, favFood: favFood}
-	fmt.Println(grey)
+	account := accounts.NewAccount("grey")
+	account.Deposit(10)
+	fmt.Println(account.Balance())
+	err := account.Withdraw(20)
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(account.Balance(), account.Owner())
 }
